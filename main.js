@@ -4,6 +4,8 @@ let age = document.getElementById("age");
 let tbody = document.getElementById("tbody");
 
 
+let url = "https://my-json-server.typicode.com/Ibrahim-Ghazaly/json-server/authors"
+
 
 document.getElementById("create").onclick = craeteAutor;
 
@@ -13,7 +15,7 @@ function craeteAutor(){
       if(author.value == "" || des.value == "" || age.value == ""){
         alert("you have to fill inputs")
     }else{
-        fetch("http://localhost:9000/authors",{
+        fetch(url,{
             method:'POST',
             headers:{'Content-Type':'application/json'},
             body:JSON.stringify({
@@ -41,7 +43,7 @@ function getAuthors(){
 
    
 
-    fetch("http://localhost:9000/authors").then(res => res.json()).then(data => {
+    fetch(url).then(res => res.json()).then(data => {
 
   
        for(let i = 0 ; i < data.length ; i++){
@@ -76,7 +78,7 @@ function Edit(id){
     document.getElementById("create").setAttribute("hidden","hidden");
 
 
-    fetch(`http://localhost:9000/authors/${id}`).then(res => res.json()).then(auth => {
+    fetch(`${url}/${id}`).then(res => res.json()).then(auth => {
 
       console.log(author)
            author.value =auth.author ;
@@ -93,7 +95,7 @@ document.getElementById("edit").onclick= ()=>{
 
 
 
-    fetch(`http://localhost:9000/authors/${id}`,{
+    fetch(`${url}/${id}`,{
         method:'PATCH',
         headers:{'Content-Type':'application/json'},
         body:JSON.stringify({
@@ -120,7 +122,7 @@ document.getElementById("edit").onclick= ()=>{
 
 function Delete(id){
 
-    fetch(`http://localhost:9000/authors/${id}`, {
+    fetch(`${url}/${id}`, {
         method: 'DELETE',
         headers: {
             'Content-type': 'application/json'
