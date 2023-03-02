@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <link href="main.css" rel="stylesheet">
+   <link href="./bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <title>Document</title>
+</head>
+<body>
+    
+ <h1>Crud App Using Js</h1> 
+ 
+ <div class ="inputs">
+    <div>
+        <label>Name</label>
+        <input type="text" placeholder="enter your name" id="name"/>
+    </div>
+   <div>
+    <label>Description</label>
+    <input type="text" placeholder="enter your description" id="description"/>
+   </div>
+  <div>
+    <label>Age</label>
+    <input type="text" placeholder="enter your age" id="age"/>
+  </div>
+    
+ </div>
+
+ <div class="btns">
+    <button id ="create" >Create</button>
+    <button id ="edit" hidden >Edet Author</button>
+ </div>
+
+
+ <div class ="outputs">
+    <table class="table table-dark table-striped text-center">
+        <thead>
+         <tr>
+             <th>ID</th>
+             <th>Name</th>
+             <th>Description</th>
+             <th>Age</th>
+             <th>Operations</th>     
+         </tr>
+        </thead>
+        <tbody id= "tbody">
+     
+       
+        
+        </tbody>
+    </table>  
+ </div>
+
+
+
+    <script src="main.js"></script>
+    <script src="./bootstrap-5.2.3-dist/bootstrap-5.2.3-dist/js/bootstrap.min.js"></script>
+
+</body>
+</html>
