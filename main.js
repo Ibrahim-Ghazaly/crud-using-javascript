@@ -5,6 +5,8 @@ let tbody = document.getElementById("tbody");
 
 
 let url = "https://my-json-server.typicode.com/Ibrahim-Ghazaly/json-server/authors"
+// let url = "http://localhost:9000/authors"
+
 
 
 document.getElementById("create").onclick = craeteAutor;
@@ -24,7 +26,9 @@ function craeteAutor(){
               age:age.value
             })
            }).then(res => res.json()).then(data => console.log(data))
+    
            
+
           author.value = '';
           des.value = '';
           age.value = '';
@@ -45,6 +49,7 @@ function getAuthors(){
 
     fetch(url).then(res => res.json()).then(data => {
 
+       console.log(data)
   
        for(let i = 0 ; i < data.length ; i++){
         tbody.innerHTML  +=  `
@@ -104,7 +109,7 @@ document.getElementById("edit").onclick= ()=>{
           age:age.value
         })
        }).then(res => res.json()).then(data =>{
-
+       console.log(data)
        tbody.innerHTML ="";
          getAuthors()
 
@@ -129,7 +134,8 @@ function Delete(id){
         }
     }).then(res =>
         res.json()).then(res =>{
-
+          console.log(res)
+    
        tbody.innerHTML ="";
          getAuthors()
        });
